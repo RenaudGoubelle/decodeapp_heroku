@@ -286,8 +286,8 @@ class App{
 			},
 			{
 				"id": 4,
-				"name": "Manok Adobo Sa Gata",
-				"description": "Masarap ang “native na manok” sa lutuing ito.  Masarap lalo na kapag ‘sinagkotsa ito sa tanglad” bago ito lagyan ng gata at luyang dilaw.",
+				"name": "frozen food",
+				"description": "knowing that one day the mouse will come out to put this food in the microwave to eat it fills you with determination",
 				"photo": "img/manokadobosagata.jpg",
 				"ingredients":[
 					{
