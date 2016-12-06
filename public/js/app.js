@@ -113,6 +113,12 @@ class App{
 	constructor(){
 		this.recipe = [
 			{
+			 "name": "TankPedia",
+	    	 "description": "An app for reading and adding tanks of the world, an to know more about the history of them",
+			 "repository": "https://github.com/RenaudGoubelle/decodeapp_heroku.git",
+			 "image": "heroku/nodejs"
+					}   ,   
+			{
 				"id": 1,
 				"name": "Utan",
 				"description": "Utan or Utan Bisaya is a vegetable soup dish popular in the Visayan region, commonly it consists different vegetables like malunggay leaves, okra, squash, taro, vine spinach (alugbati), eggplants, snake beans (sitaw), ginger and tomatoes cooked together with either pork, fish or shrimps. Similar to laswa and the only difference it the vegetable used, are the ones commonly found in the Visayas.",
