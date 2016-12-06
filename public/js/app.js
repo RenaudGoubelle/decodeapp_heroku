@@ -120,8 +120,8 @@ class App{
 					}   ,   
 			{
 				"id": 1,
-				"name": "Utan",
-				"description": "Utan or Utan Bisaya is a vegetable soup dish popular in the Visayan region, commonly it consists different vegetables like malunggay leaves, okra, squash, taro, vine spinach (alugbati), eggplants, snake beans (sitaw), ginger and tomatoes cooked together with either pork, fish or shrimps. Similar to laswa and the only difference it the vegetable used, are the ones commonly found in the Visayas.",
+				"name": "wird food",
+				"description": "knowing that the dog will eat this food it fills you with dertermination",
 				"photo": "img/utan.jpg",
 				"ingredients":[
 					{
