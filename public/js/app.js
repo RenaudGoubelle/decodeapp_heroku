@@ -228,8 +228,8 @@ class App{
 			},
 			{
 				"id": 3,
-				"name": "Pork Humba Bisaya",
-				"description": "Humba (HOOM-BAA) is a Filipino dish similar to adobo, and popular in central part of the Philippines, particularly among the Visayan speaking people. The method of cooking is similar to adobo (chicken or lean pork) by simmering the meat in a marinade of soy sauce, vinegar, brown sugar, bay leaf, and peppercorns. The difference is the type of meat used which is pork belly, which has skin, fat, and lean portions.",
+				"name": "Black goo",
+				"description": "knowing that a demon cooked this food for his lord and savior satan as a tanks , it fills you with determination",
 				"photo": "img/porkhumbabisaya.jpg",
 				"ingredients":[
 					{
