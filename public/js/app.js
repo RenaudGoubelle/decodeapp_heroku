@@ -1,35 +1,157 @@
- /*
 "use strict";
 
 
 class App{
 	constructor(){
-		this.media = [
-			{
-				"img" : "http://lorempixel.com/580/250/nature/1",
-				"alignment" : "center-align",
-				"caption": "asdfasdfasdfa",
-				"slogan": "asdfasdasdfasdfasdfasdfasdf"
-			},
-			{
-				"img" : "http://lorempixel.com/580/250/nature/2",
-				"alignment" : "left-align",
-				"caption": "asdfasdfasdfa",
-				"slogan": "asdfasdasdfasdfasdfasdfasdf"
-			},
-			{
-				"img" : "http://lorempixel.com/580/250/nature/3",
-				"alignment" : "right-align",
-				"caption": "asdfasdfasdfa",
-				"slogan": "asdfasdasdfasdfasdfasdfasdf"
-			},
-			{
-				"img" : "http://lorempixel.com/580/250/nature/4",
-				"alignment" : "center-align",
-				"caption": "asdfasdfasdfa",
-				"slogan": "asdfasdasdfasdfasdfasdfasdf"
-			}
-		];
+	this.x=[
+	{		
+		"Tankimage":"http://armedforcesmuseum.com/wp-content/uploads/2012/04/Tank-M4-Sherman.jpg",
+		"TankName": "M4 Sherman",
+		"History": "The American M4 Sherman Medium Tank formed the backbone of the World War 2 Allied armored offensive.",
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	},
+	{
+		"Tankimage":"http://www.warlordgames.com/wp-content/uploads/2016/11/ST03.jpg",
+		"TankName":"M3 Stuart",
+		"History":"American light tank development in the USA was confounded with tank development itself.",
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	},
+	{	
+		"Tankimage":"http://wotlabs.net/articles/wp-content/uploads/2014/03/kv-2-heavy-tank-05.png" ,
+		"TankName":"KV-2 (The Bunker Buster)" ,
+		"History":"The Russo-Finnish war proved the soundness of the decision to manufacture the KV-1." ,
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+
+	},
+	{
+		"Tankimage":"http://www.achtungpanzer.com/images/hunpz4.jpg" ,
+		"TankName":" Panzerkampfwagen IV Ausf F(F1)" ,
+		"History":"Panzerkampfwagen IV was the main German tank of World War II, in action from September 1st of 1939 to May 9th of 1945." ,
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	}
+ ]
+	this.tanks=[{
+		"Tankimage":"http://www.tanks-encyclopedia.com/wp-content/uploads/2015/05/ISU-152-with-bl8.jpg",
+		"TankName": "ISU-152 (beast killer)",
+		"History": "The ISU-152 was an absolute nightmare for the Wehrmacht. Much like the SU-152, it was capable of blowing Tiger, Ferdinand, and Panther turrets/casemates open",
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	},{
+		"Tankimage":"http://www.hobbyboss.com/Uploads/201603/56fcc6049ebc1.jpg",
+		"TankName": "ZIS-30",
+		"History": "The ZiS-30 came to be in 1941, because the Soviets lacked everything but manpower to fight the war.",
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	},
+	{
+		"Tankimage":"http://www.militaryfactory.com/armor/imgs/somua-s35_4.jpg",
+		"TankName": "SOMUA S35",
+		"History": "In 1934, the French Army issued a new requirement for a cavalry tank in an attempt to modernized its inventory amidst growing regional unrest.",
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	},
+	{
+		"Tankimage":"http://www.army-technology.com/projects/leclerc/images/leclerc_11.jpg",
+		"TankName": "Leclerc Main Battle Tank",
+		"History": " The Leclerc main battle tank was developed by GIAT Industries. Its development began in 1978 and first prototypes were built in 1989. Production of the Leclerc MBT started in 1991.",
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	},
+	{
+		"Tankimage":"http://www.tanks-encyclopedia.com/ww2/US/photos/Super_Pershing.jpg",
+		"TankName": "M26 Pershing",
+		"History": "The M26 Pershing descends from a long series of heavy and “universal tank” prototypes, dating back from 1936.",
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	},
+	{
+		"Tankimage":"http://www.military-today.com/tanks/m1a2_abrams.jpg",
+		"TankName": "M1A2 Abrams Main Battle Tank",
+		"History": "Approved for production in 1990, the M1A2 represents the U.S. Army’s technological improvement of the basic M1A1 design and the most modern battle tank in the world.",
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	},
+	{
+		"Tankimage":"http://www.military-today.com/tanks/t90.jpg",
+		"TankName": "T-90 Main Battle Tank",
+		"History": "The T-90 main battle tank is a further development of the T-72. It was accepted to service with Russian army in 1993 and its low-rate production commenced in 1994.",
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	},
+	{
+		"Tankimage":"http://ic.pics.livejournal.com/yuripasholok/765139/2483686/2483686_original.jpg",
+		"TankName": "T-60 (A brother's grave for two) ",
+		"History": "The T-60 was the result of the ongoing development of light tanks that had started well before WWII.",
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	},
+	{
+		"Tankimage":"https://upload.wikimedia.org/wikipedia/commons/6/6c/T-70,_technical_museum,_Togliatti-4.jpg",
+		"TankName": "T-70",
+		"History": "The T-70 was yet another stop-gap in Soviet tank production.",
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	},
+	{
+		"Tankimage":"http://atvtank.ru/files/pictureBox/catalogItem/335/5.jpg",
+		"TankName": "T-80",
+		"History": "The most remarkable trait about this Soviet MBT was its turbine, used as main motricity power. It was indeed the first conventional MBT equipped with a turbine, preceding the M1 Abrams from two years in service.",
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	},
+	{		
+		"Tankimage":"http://armedforcesmuseum.com/wp-content/uploads/2012/04/Tank-M4-Sherman.jpg",
+		"TankName": "M4 Sherman",
+		"History": "The American M4 Sherman Medium Tank formed the backbone of the World War 2 Allied armored offensive.",
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	},
+	{
+		"Tankimage":"http://www.warlordgames.com/wp-content/uploads/2016/11/ST03.jpg",
+		"TankName":"M3 Stuart",
+		"History":"American light tank development in the USA was confounded with tank development itself.",
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	},
+	{	
+		"Tankimage":"http://wotlabs.net/articles/wp-content/uploads/2014/03/kv-2-heavy-tank-05.png" ,
+		"TankName":"KV-2 (The Bunker Buster)" ,
+		"History":"The Russo-Finnish war proved the soundness of the decision to manufacture the KV-1." ,
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+
+	},
+	{
+		"Tankimage":"http://www.achtungpanzer.com/images/hunpz4.jpg" ,
+		"TankName":" Panzerkampfwagen IV Ausf F(F1)" ,
+		"History":"Panzerkampfwagen IV was the main German tank of World War II, in action from September 1st of 1939 to May 9th of 1945." ,
+		"link1": "Update",
+		"link2": "Delete",
+		"link3": "More"
+	}
+	]
+
 	}
 	render(html, component){
 
@@ -40,6 +162,7 @@ class App{
 
 		component.innerHTML = html;
 	}
+	
 }
 
 class Component extends App{
@@ -48,80 +171,191 @@ class Component extends App{
 		super();
 	}
 
-	ukayLayout(){
-		let html = `
-			 <nav>
-			    <div class="nav-wrapper blue darken-4">
-			      <a href="#" class="brand-logo yellow-text ">UKAY v1.0</a>
-			      <ul id="nav-mobile" class="right hide-on-med-and-down">
-			        <li><a href="#">Items</a></li>
-			        <li><a href="#">Cart</a></li>
-			        <li><a href="#">New</a></li>
-			      </ul>
-			    </div>
-			  </nav>
+	tankpediaLayout(){
+		let y = this.x;
+		let index=0;
+		let count=0;
+		let html =`<div class="row">`;
+		for(let index=0;index<y.length;index++){
+	 		if(index === 2)break;
+	 		html+=`
+	 		
+	 			<div class= "col s6 m6">
+	 				<div class="card card-big #3e2723 brown darken-4  resizecard">
+	 					<div class="card-image  #3e2723 brown darken-4">
+	 						<img class="resizeimg" src=${y[index].Tankimage} >
+	 						<span class="card-title " style="color:#ff0000; font-weight: bold;">${y[index].TankName}</span>
+	 					</div>
+	 					<div class="card-content #d50000 #3e2723 brown darken-4 white-text resizecontent">
+	 						<p>${y[index].History}</p>
+	 					</div>
+	 					<div class="card-action #d50000 #3e2723 brown darken-4 white-text resizeaction">
+	 						<a href="#"onclick="component.Update()" id="update" class="white-text">${y[index].link1}</a>
+	 						<a href="#" onclick="component.Delete()"id="delete" class="white-text">${y[index].link2}</a>
+	 						<a href="#"onclick="component.More()" id="more" class="white-text">${y[index].link3}</a>
+	 					</div>
+	 				</div>
+	 			</div>
+	 		
+	 		`;
+     }
+     html+=`</div><br>
+	 		<br>
+	 		<br>
+     <div class="row">`;
+     	for(let index=2;index<y.length;index++){
+     		if(index === 4)break;
+	 		html+=`
+	 		
+	 			<div class= "col s7 m6">
+	 				<div class="card card-big #3e2723 brown darken-4  resizecard">
+	 					<div class="card-image  #3e2723 brown darken-4">
+	 						<img class="resizeimg" src=${y[index].Tankimage} >
+	 						<span class="card-title " style="color:#ff0000; font-weight: bold;">${y[index].TankName}</span>
+	 					</div>
+	 					<div class="card-content #d50000 #3e2723 brown darken-4 white-text resizecontent">
+	 						<p>${y[index].History}</p>
+	 					</div>
+	 					<div class="card-action #d50000 #3e2723 brown darken-4 white-text resizeaction">
+	 						<a href="#" id="update"onclick="component.Update()" class="white-text">${y[index].link1}</a>
+	 						<a href="#" id="delete"onclick="component.Delete()" class="white-text">${y[index].link2}</a>
+	 						<a href="#" id="more"onclick="component.More()" class="white-text">${y[index].link3}</a>
+	 					</div>
+	 				</div>
+	 			</div>
+	 		
+	 		`;
+     }
 
+     html +=`<br>
+	 		<br></div>	`;
+		
+		this.reRender( `
+  ${html}
+  `,document.getElementById("app"));
+        }
 
-			  <div class="slider">
-			    <ul class="slides">
+// `<div class="col s12 m7">
+//     <h2 class="header">Horizontal Card</h2>
+//     <div class="card horizontal">
+//       <div class="card-image">
+//         <img src="http://lorempixel.com/100/190/nature/6">
+//       </div>
+//       <div class="card-stacked">
+//         <div class="card-content">
+//           <p>I am a very simple card. I am good at containing small bits of information.</p>
+//         </div>
+//         <div class="card-action">
+//           <a href="#">This is a link</a>
+//         </div>
+//       </div>
+//     </div>
+//   </div>}`
 
-			    `;
-
-			   for(let i=0;i<this.media.length;i++){
-					html += `
-					      <li>
-					        <img src="${this.media[i].img}"> <!-- random image -->
-					        <div class="caption ${this.media[i].alignment}">
-					          <h3>${this.media[i].caption}</h3>
-					          <h5 class="light grey-text text-lighten-3">${this.media[i].slogan}</h5>
-					        </div>
-					      </li>
-					    
-					 `;
-					}
-
-
-			 html += `
-
-					</ul>
-				  </div>
-				<footer class="page-footer blue darken-4">		          
-		          <div class="footer-copyright">
-		            <div class="container">
-		            © 2016 - Another decode App
-		            </div>
-		          </div>
-		        </footer>			  
-		`;
-
-		this.reRender(`
-			${html}
-			`,document.getElementById("app"));
+	List_Of_Tanks(){
+		let y = this.tanks;
+		let index =0;
+		let html='<div class="row">';
+		for(let index=0;index<y.length;index++){
+		 html+=`
+	 		<div class= "col s12 m7">
+	 			<div class="card horizontal #3e2723 brown darken-4  resizecard">
+	 				<div class="card-image #3e2723 brown darken-4">
+	 					<img class="resizeimg" src=${y[index].Tankimage} >
+	 				</div>
+					<div class="card-content #d50000 #3e2723 brown darken-4 white-text resizecontent">
+					<h3 class="red-text"> ${y[index].TankName}</h3>
+	 						<p>${y[index].History}</p>
+	 					</div>
+	 					<div class="card-action #d50000 #3e2723 brown darken-4 white-text resizeaction">
+	 						<a href="listoftanks"onclick="component.Update()" id="update" class="white-text">${y[index].link1}</a>
+	 						<a href="listoftanks" onclick="component.Delete()"id="delete" class="white-text">${y[index].link2}</a>
+	 						<a href="listoftanks"onclick="component.More()" id="more" class="white-text">${y[index].link3}</a>
+	 					</div>
+	 				</div>		
+	 			</div>
+	 		`;
+     }
+     html+='</div>';
+     
+		this.reRender(
+			`${html}`,document.getElementById("app"))
+		$('#landingpage').hide;
 	}
+Create_Tank(){
+	let html=`
+	JOSEPH STALIN APPROVES
+	`;
+	this.reRender(
+		`${html}`, document.getElementById("app"))
+	$('#landing page').hide
 }
-
+More(){
+let html=`want more?
+`
+this.reRender(
+		`${html}`, document.getElementById("app"))
+	$('#landing page').hide;
+}
+Update(){
+	let html=`update tank`;
+	this.reRender(
+		`${html}`, document.getElementById("app"))
+	$('#landing page').hide
+}
+Delete(){
+	let html=` YOU WANT TO DELETE A PIECE OF HISTORY ABSOLUTELY HARAM`;
+	this.reRender(
+		`${html}`, document.getElementById("app"))
+	$('#landing page').hide
+}
+}
+function visitPage(){
+        window.location='http://www.google.com';
+    }
 let component = new Component();
-component.ukayLayout();
-*/
+component.tankpediaLayout();
+
+	// let r = this.recipe;
+	// 	let count = 0;
+	// 	for(let i=(r.length-1);i>=0;i--){
+	// 		if(count++ === 3)break;
+	// 		html+= `
+	// 			<div class="col s12 m4">
+	// 				<div class="card small hoverable">
+	// 					<div class="card-image">
+	// 						<img src="${r[i].photo}">
+	// 						<span class="card-title">${r[i].name}</span>
+	// 					</div>
+	// 					<div class="card-content">
+	// 						<p>${r[i].description}</p>
+	// 					</div>
+	// 					<div class="card-action">
+	// 						<a href="#" onclick="component.recipeView(${r[i].id})">More</a>
+	// 					</div>
+	// 				</div>
+	// 			</div>
+	// 		`;
+	// 	}
+
+	// 	html += `</div>`;
+
+	// 	this.render(`		
+	// 		${html}
+	// 		`,document.getElementById("recipeRecent"));
+	// }
 
 
-
-
+/*
 "use strict";
 
 class App{
 	constructor(){
 		this.recipe = [
 			{
-			 "name": "TankPedia",
-	    	 "description": "An app for reading and adding tanks of the world, an to know more about the history of them",
-			 "repository": "https://github.com/RenaudGoubelle/decodeapp_heroku.git",
-			 "image": "heroku/nodejs"
-					}   ,   
-			{
 				"id": 1,
-				"name": "wird food",
-				"description": "knowing that the dog will eat this food it fills you with dertermination",
+				"name": "Utan",
+				"description": "Utan or Utan Bisaya is a vegetable soup dish popular in the Visayan region, commonly it consists different vegetables like malunggay leaves, okra, squash, taro, vine spinach (alugbati), eggplants, snake beans (sitaw), ginger and tomatoes cooked together with either pork, fish or shrimps. Similar to laswa and the only difference it the vegetable used, are the ones commonly found in the Visayas.",
 				"photo": "img/utan.jpg",
 				"ingredients":[
 					{
@@ -228,8 +462,8 @@ class App{
 			},
 			{
 				"id": 3,
-				"name": "Black goo",
-				"description": "knowing that a demon cooked this food for his lord and savior satan as a tanks , it fills you with determination",
+				"name": "Pork Humba Bisaya",
+				"description": "Humba (HOOM-BAA) is a Filipino dish similar to adobo, and popular in central part of the Philippines, particularly among the Visayan speaking people. The method of cooking is similar to adobo (chicken or lean pork) by simmering the meat in a marinade of soy sauce, vinegar, brown sugar, bay leaf, and peppercorns. The difference is the type of meat used which is pork belly, which has skin, fat, and lean portions.",
 				"photo": "img/porkhumbabisaya.jpg",
 				"ingredients":[
 					{
@@ -286,8 +520,8 @@ class App{
 			},
 			{
 				"id": 4,
-				"name": "frozen food",
-				"description": "knowing that one day the mouse will come out to put this food in the microwave to eat it fills you with determination",
+				"name": "Manok Adobo Sa Gata",
+				"description": "Masarap ang “native na manok” sa lutuing ito.  Masarap lalo na kapag ‘sinagkotsa ito sa tanglad” bago ito lagyan ng gata at luyang dilaw.",
 				"photo": "img/manokadobosagata.jpg",
 				"ingredients":[
 					{
@@ -493,8 +727,8 @@ class Component extends App{
 		let html = `
 			<div id="recipeLayout" class="container">
 				<nav>
-					<div class="nav-wrapper blue">
-						<a href="#" onclick="component.recipeLayout()" class="brand-logo">&nbsp;&nbsp;Goubelle</a>
+					<div class="nav-wrapper">
+						<a href="#" onclick="component.recipeLayout()" class="brand-logo">&nbsp;&nbsp;SUD-AN</a>
 						<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 						<ul class="right hide-on-med-and-down">
 							<li><a href="#" onclick="component.recipeList()"><i class="material-icons left">assignment</i>Recipes</a></li>
@@ -512,7 +746,7 @@ class Component extends App{
 				<div id="recipeList"></div>
 				<div id="recipeCreate"></div>
 
-				<footer class="page-footer blue">
+				<footer class="page-footer">
 					<div class="container">
 						<div class="row">
 							<div class="col l6 s12">
@@ -562,34 +796,7 @@ class Component extends App{
 			<div class="row">
 		`;
 
-		let r = this.recipe;
-		let count = 0;
-		for(let i=(r.length-1);i>=0;i--){
-			if(count++ === 3)break;
-			html+= `
-				<div class="col s12 m4">
-					<div class="card small hoverable">
-						<div class="card-image">
-							<img src="${r[i].photo}">
-							<span class="card-title">${r[i].name}</span>
-						</div>
-						<div class="card-content">
-							<p>${r[i].description}</p>
-						</div>
-						<div class="card-action">
-							<a href="#" onclick="component.recipeView(${r[i].id})">More</a>
-						</div>
-					</div>
-				</div>
-			`;
-		}
-
-		html += `</div>`;
-
-		this.render(`		
-			${html}
-			`,document.getElementById("recipeRecent"));
-	}
+	
 
 	recipeView(id){
 		let r = this.findRecipeByID(id);
@@ -900,7 +1107,7 @@ class Component extends App{
 
 let component = new Component();
 component.recipeLayout();
-
+*/
 
 //////////////////////////////////////
 

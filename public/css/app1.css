@@ -1,0 +1,107 @@
+.body { 
+    background-image: url("http://cdn.wallpapersafari.com/43/80/OwxPfl.jpg"  );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+.nav-wrapper{
+	
+
+}
+.brand-logo{
+
+}
+ /*card-big{
+  border: 6px solid;
+  border-color: red;
+	width:240px;
+	height:240px;
+	
+}
+
+.card-content{
+	height: 90px;
+  width : 340px ;
+}
+.card-action{
+  height: 50px;
+  width : 340px;
+}
+.right{
+	align= "right";
+}*/
+.image{
+  width:400px;
+  height:300px;
+}
+
+@media (max-width: 300px) {
+  .resizeimg {
+    height: auto;
+
+  }
+}
+
+@media (min-width: 100px) {
+  .resizeimg {
+    width: auto;
+    height: 350px;
+    
+  }
+}
+
+@media (max-width: 300px) {
+  .resizecard {
+    height: auto;
+
+  }
+}
+
+@media (min-width: 100px) {
+  .resizecard {
+    width: auto;
+    height: 400px;
+    
+  }
+}
+@media (max-width: 400px) {
+  .resizecontent {
+    height: auto;
+
+  }
+}
+
+@media (min-width: 100px) {
+  .resizecontent {
+    width: auto;
+    height: 80px;
+    
+  }
+}
+@media (max-width: 400px) {
+  .resizeaction {
+    height: auto;
+
+  }
+}
+
+@media (min-width: 100px) {
+  .resizeaction {
+    width: auto;
+    height: 50px;
+    
+  }
+}
+@media(max-width: 1000px){
+.footer{
+  height: auto;
+  
+  }
+}
+@media(min-width: 500px){
+  .footer{
+    width: auto;
+
+  }
+}

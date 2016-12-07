@@ -3,26 +3,74 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<link rel="icon" type="image/png" href="img/decode.png">	
+	<link rel="icon" type="image/jpg" href="img/into the motherland.jpg">	
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<title>Test page</title>
+	<title>Tankpedia</title>
 
 	<!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
 	<link rel="stylesheet" href="css/materialize.css">
-	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/app1.css">
 </head>
-<body >
+<body class="body">
 
-	<div id="app"></div>	
+<nav>
+  <div class="nav-wrapper #212121 grey darken-4 ">
+   <div class="row">
+     <div class="col s12 m20"> 
+      <a href="#Landingpage" class="brand-logo">Tankpedia</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#" onclick="component.List_Of_Tanks()">List of Tanks</a></li>
+        <li><a href="#"  onclick="component.Create_Tank()">Create Tank</a></li>
+        
+      </ul>
+      </div>
+      </div>
+    </div>
+   </nav>
 
+	<div id="app" class="container"></div>
+	<br>
+
+	<br>
+	<br>
+<footer class="page-footer #212121 grey darken-4 footer">
+          <div class="container #212121 grey darken-4">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+               <a href="https://google.com" id="update" >UPDATE</a>
+               <br>
+
+              <a href="https://google.com" id="delete">DELETE</a>
+              <br>
+              <a href="https://google.com" id="more">MORE</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+           
+            </div>
+          </div>
+        </footer>
 	<script src="js/jquery-3.1.1.js"></script>
 	<!-- <script src="js/bootstrap.js"></script> -->
 	<script src="js/materialize.js"></script>
 	<script src="js/app.js"></script>
 	<script>
-    $(document).ready(function(){
-      $('.slider').slider({full_width: true});
-    });
-	</script>
+		$( document ).ready(function(){
+			$(".button-collapse").sideNav();
+			$('.tooltipped').tooltip({delay: 50});
+		})
+	</script>  
+
+
+	 
+
 </body>
 </html>
