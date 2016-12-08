@@ -262,9 +262,9 @@ class Component extends App{
 	 		<div class= "col s12 m12">
 	 			<div class="card horizontal #3e2723 brown darken-4  resizecard">
 	 				<div class="card-image #3e2723 brown darken-4">
-	 					<img class="resizeimg" src=${y[index].Tankimage} >
+	 					<img class="Listoftanksimagesize" src=${y[index].Tankimage} >
 	 				</div>
-					<div class="card-content #d50000 #3e2723 brown darken-4 white-text resizecontent">
+					<div class="card-content #d50000 #3e2723 brown darken-4 white-text">
 					<h3 class="red-text"> ${y[index].TankName}</h3>
 	 						<p>${y[index].History}</p>
 	 					</div>

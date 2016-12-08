@@ -36,18 +36,33 @@
   height:300px;
 }
 
+
+  /*.resizeimgL {
+    width: auto;
+    height: auto;
+
+  }
+
+*/
+
+  .Listoftanksimagesize{
+    width: 370px;
+    height: 400px;
+    
+  }
+
+
 @media (max-width: 300px) {
   .resizeimg {
-    width:auto;
     height: auto;
 
   }
 }
 
-@media (min-width: 150px) {
+@media (min-width: 100px) {
   .resizeimg {
-    width:250px;
-    height: 400px;
+    width: auto;
+    height: 350px;
     
   }
 }
