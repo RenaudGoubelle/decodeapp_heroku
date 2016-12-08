@@ -153,6 +153,7 @@ class App{
 	]
 
 	}
+
 	render(html, component){
 
 		component.innerHTML += html;
@@ -172,7 +173,7 @@ class Component extends App{
 	}
 
 	tankpediaLayout(){
-		let y = this.x;
+		let y = this.tanks;
 		let index=0;
 		let count=0;
 		let html =`<div class="row">`;
@@ -190,9 +191,9 @@ class Component extends App{
 	 						<p>${y[index].History}</p>
 	 					</div>
 	 					<div class="card-action #d50000 #3e2723 brown darken-4 white-text resizeaction">
-	 						<a href="#"onclick="component.Update()" id="update" class="white-text">${y[index].link1}</a>
-	 						<a href="#" onclick="component.Delete()"id="delete" class="white-text">${y[index].link2}</a>
-	 						<a href="#"onclick="component.More()" id="more" class="white-text">${y[index].link3}</a>
+	 						<a  class="waves-effect waves-teal btn-flat red-text">${y[index].link1}</a>
+	 						 <a  class="waves-effect waves-teal btn-flat red-text" onclick="component.delete()">${y[index].link2}</a>
+	 						<a  class="waves-effect waves-teal btn-flat red-text">${y[index].link3}</a>
 	 					</div>
 	 				</div>
 	 			</div>
@@ -217,9 +218,9 @@ class Component extends App{
 	 						<p>${y[index].History}</p>
 	 					</div>
 	 					<div class="card-action #d50000 #3e2723 brown darken-4 white-text resizeaction">
-	 						<a href="#" id="update"onclick="component.Update()" class="white-text">${y[index].link1}</a>
-	 						<a href="#" id="delete"onclick="component.Delete()" class="white-text">${y[index].link2}</a>
-	 						<a href="#" id="more"onclick="component.More()" class="white-text">${y[index].link3}</a>
+	 						<a  class="waves-effect waves-teal btn-flat red-text">${y[index].link1}</a>
+	 						<a  class="waves-effect waves-teal btn-flat red-text" onclick="component.delete()">${y[index].link2}</a>
+	 						<a  class="waves-effect waves-teal btn-flat red-text">${y[index].link3}</a>
 	 					</div>
 	 				</div>
 	 			</div>
@@ -261,17 +262,17 @@ class Component extends App{
 		 <div class="row">
 	 		<div class= "col s12 m12">
 	 			<div class="card horizontal #3e2723 brown darken-4  resizecard">
-	 				<div class="card-image #3e2723 brown darken-4">
-	 					<img class="Listoftanksimagesize" src=${y[index].Tankimage} >
+	 				<div class="card-image size #3e2723 brown darken-4">
+	 					<img class="Listoftanksimagesize size" src=${y[index].Tankimage} >
 	 				</div>
 					<div class="card-content #d50000 #3e2723 brown darken-4 white-text">
 					<h3 class="red-text"> ${y[index].TankName}</h3>
 	 						<p>${y[index].History}</p>
 	 					</div>
 	 					<div class="card-action #d50000 #3e2723 brown darken-4 white-text ">
-	 						<a href="listoftanks"onclick="component.Update()" id="update" class="white-text">${y[index].link1}</a>
-	 						<a href="listoftanks" onclick="component.Delete()"id="delete" class="white-text">${y[index].link2}</a>
-	 						<a href="listoftanks"onclick="component.More()" id="more" class="white-text">${y[index].link3}</a>
+	 						<a  class="waves-effect waves-teal btn-flat red-text"onlick="">${y[index].link1}</a>
+	 						  <a class="waves-effect waves-teal btn-flat red-text" onclick="component.delete()">${y[index].link2}</a>
+	 						<a  class="waves-effect waves-teal btn-flat red-text"onlick="">${y[index].link3}</a>
 	 					</div>
 	 				</div>		
 	 			</div>
@@ -283,14 +284,90 @@ class Component extends App{
 			`${html}`,document.getElementById("app"))
 		$('#landingpage').hide;
 	}
-Create_Tank(){
-	let html=`
-	JOSEPH STALIN APPROVES
-	`;
-	this.reRender(
-		`${html}`, document.getElementById("app"))
-	$('#landing page').hide
+TankCreate(){
+	let html = `
+			<div class="row">
+				<form class="col s12">
+				<h5 class="center-align">Create New Recipe</h5>
+				<button onclick="component.Create_Tank" class="btn waves-effect waves-light red">Deploy</button>
+					<div class="row">
+						<div class="input-field col s1 white">
+							<input class="blue-text" disabled value="${this.tanks.length+1}" id="tank_id" type="text" class="validate">
+						</div>
+						<div class="input-field col s6 white">
+							<input id="Tank_name" type="text" class="validate">
+							<label for="Tank_name">Tank's name</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s6 white">
+							<input id="tank_description" type="text" class="validate">
+							<label for="tank_description">HIstory of tank</label>
+						</div>
+						<div class="input-field col s6 white">
+							<input id="tank_photo" type="text" class="validate">
+							<label for="tank_photo">URL photo of tank</label>
+						</div>
+					</div>
+					<div class="row">
+					
+				</form>
+			</div>			
+		`;
+
+		this.reRender(`
+			${html}
+			`,document.getElementById("app"));
+		$('#TankCreate').show();
+		$('#landingpage').hide();
+		$('#List_Of_Tanks').hide();
 }
+Create_Tank(){
+	let Tankimg= document.getElementById("Tankimage");
+	let TN = document.getElementById("TankName");
+	let H =document.getElementById("History");
+		let Tankcreate = {"Tankimage":Tankimg.value,"TankName":TN.value,"History":H.value};
+		this.tanks.push(Tankcreate);
+		Tankimg.value = TN.value = H.value = '';
+		this.List_Of_Tanks();
+		this.tanks.push(Create_Tank)
+
+	// this.reRender(
+	// 	`${html}`, document.getElementById("app"))
+}
+// 	deleteMovie(key){		
+// 		let table = document.getElementById('movieListInfo');
+// 		table.deleteRow(key);
+// 		this.movies.splice(key,1);
+
+// 		// let m = this.movies;
+// 		// let dummy = [];
+// 		// for(let i=0;i<m;i++){
+// 		// 	if(key!=i){
+// 		// 		dummy.push(m[i]);
+// 		// 	}
+// 		// }
+// 		// this.movies = dummy;
+// 		let details = document.getElementById('movieDetails');
+// 		details.innerHTML = "";
+		
+// 		this.movieListInfo();	
+// 		this.showMovieList();	
+// 	}
+Delete(key){
+	this.tanks.splice(key,1);
+	let del = this.tanks;
+	let dummy=[];
+	for(let i=0; i<tanks.length; i++){
+		if(key!=i){
+				dummy.push(del[i]);
+		}
+	}
+	this.tanks=dummy;
+	this.List_Of_Tanks();
+	}
+
+
 More(){
 let html=`want more?
 `
@@ -304,12 +381,21 @@ Update(){
 		`${html}`, document.getElementById("app"))
 	$('#landing page').hide
 }
-Delete(){
-	let html=` YOU WANT TO DELETE A PIECE OF HISTORY ABSOLUTELY HARAM`;
-	this.reRender(
-		`${html}`, document.getElementById("app"))
-	$('#landing page').hide
-}
+//	deleteRecipe(key){
+// 		let r = this.recipe;
+// 		for(let i=0;i<r.length;i++){
+// 			if(r[i].id == key){
+// 				this.recipe.splice(i,1);
+// 				break;
+// 			}
+// 		}		
+// 		this.recipeLayout();
+// 	}
+
+// 	this.reRender(
+// 		`${html}`, document.getElementById("app"))
+// 	$('#landing page').hide
+// }
 }
 function visitPage(){
         window.location='http://www.google.com';
@@ -317,413 +403,162 @@ function visitPage(){
 let component = new Component();
 component.tankpediaLayout();
 
-	// let r = this.recipe;
-	// 	let count = 0;
-	// 	for(let i=(r.length-1);i>=0;i--){
-	// 		if(count++ === 3)break;
-	// 		html+= `
-	// 			<div class="col s12 m4">
-	// 				<div class="card small hoverable">
-	// 					<div class="card-image">
-	// 						<img src="${r[i].photo}">
-	// 						<span class="card-title">${r[i].name}</span>
-	// 					</div>
-	// 					<div class="card-content">
-	// 						<p>${r[i].description}</p>
-	// 					</div>
-	// 					<div class="card-action">
-	// 						<a href="#" onclick="component.recipeView(${r[i].id})">More</a>
-	// 					</div>
-	// 				</div>
-	// 			</div>
-	// 		`;
-	// 	}
 
-	// 	html += `</div>`;
+// 		this.state = [
+// 			{
+// 				"bind": {
+// 					"procedures":[],
+// 					"ingredients_qty":[],
+// 					"ingredients_name":[]
+// 				}
+// 			}
+// 		];
+// 	}
 
-	// 	this.render(`		
-	// 		${html}
-	// 		`,document.getElementById("recipeRecent"));
-	// }
+// 	render(html, component){
+
+// 		component.innerHTML += html;
+// 	}
+
+// 	reRender(html, component){
+
+// 		component.innerHTML = html;
+// 	}
+
+// 	createRecipe(){
+// 		let id = document.getElementById('recipe_id');
+// 		let name = document.getElementById('recipe_name');
+// 		let description = document.getElementById('recipe_description');
+// 		let photo = document.getElementById('recipe_photo');
+// 		let preparationtime = document.getElementById('recipe_preparationtime');
+// 		let cookingtime = document.getElementById('recipe_cookingtime');
+// 		let yields = document.getElementById('recipe_yields');
+		
+// 		let dummyIngredients = [];
+// 		for(let i=0;i<this.state[0].bind.ingredients_qty.length;i++){
+// 			dummyIngredients.push({
+// 				"qty" : this.state[0].bind.ingredients_qty[i],
+// 				"name" : this.state[0].bind.ingredients_name[i]
+// 			});
+// 		}
+// 		let ingredients = dummyIngredients;
+
+// 		let dummyProcedure = [];
+// 		for(let i=0;i<this.state[0].bind.procedures.length;i++){
+// 			dummyProcedure.push(this.state[0].bind.procedures[i]);
+// 		}
+// 		let procedure = dummyProcedure;
+
+// 		let recipe = {			
+// 			"id": id.value,
+// 			"name": name.value,
+// 			"description": description.value,
+// 			"photo": photo.value,
+// 			"ingredients":ingredients,
+// 			"preparationtime": preparationtime.value,
+// 			"cookingtime": cookingtime.value,
+// 			"yields": yields.value,
+// 			"procedure": procedure
+// 		};
 
 
+// 		this.recipe.push(recipe);
+
+// 		//Clear Fields
+// 		this.state[0].bind.procedures = this.state[0].bind.ingredients_qty = this.state[0].bind.ingredients_name = [];
+// 		id.value = name.value = description.value = photo.value = preparationtime.value = cookingtime.value = yields.value = ''; 
+// 	}	
+
+// 	deleteRecipe(key){
+// 		let r = this.recipe;
+// 		for(let i=0;i<r.length;i++){
+// 			if(r[i].id == key){
+// 				this.recipe.splice(i,1);
+// 				break;
+// 			}
+// 		}		
+// 		this.recipeLayout();
+// 	}
+
+// 	findRecipeByID(id){
+// 		let r = this.recipe;
+// 		for(let i=0;i<r.length;i++){
+// 			if(id==r[i].id){
+// 				return r[i];
+// 			}
+// 		}
+// 	}	
+
+// 	findRecipeByName(name){
+// 		let objects = [];
+// 		let r = this.recipe;
+// 		for(let i=0;i<r.length;i++){
+// 			let expr = (r[i].name.toUpperCase().indexOf(name.toUpperCase()) > -1);
+// 			// console.log(name," vs ",r[i].name," = ",expr);
+// 			if(expr){
+// 				objects.push(r[i]);
+// 			}
+// 		}
+// 		return objects;
+// 	}
+
+// 	bindRecipeNewProcedures(val,id){
+// 		let bind = this.state[0].bind.procedures;
+// 		bind[id] = val;
+// 		// console.log(bind);
+// 	}	
+
+// 	bindRecipeNewIngredients(val,id,obj){
+// 		let bind = null;
+// 		if(obj === "qty"){
+// 			bind = this.state[0].bind.ingredients_qty;
+// 		}
+// 		else if(obj === "name"){
+// 			bind = this.state[0].bind.ingredients_name;
+// 		}
+// 		bind[id] = val;
+// 		// console.log(bind);
+// 	}	
+// }
+
+// class Component extends App{
+// 	constructor(){
+		
+// 		super();
+// 	}
+// 	createMovie(){
+// 		let t = document.getElementById('newTitle');
+// 		let y = document.getElementById('newYear');
+// 		let d = document.getElementById('newDirector');
+// 		let p = document.getElementById('newPoster');
+// 		let a = document.getElementById('newActors');
+
+// 		let movie = {"Title":t.value,"Year":y.value,"Director":d.value,"Poster":p.value,"Actors":a.value};
+// 		this.movies.push(movie);
+
+// 		t.value = y.value = d.value = p.value = a.value = ''; //Clear Fields
+// 		this.movieListInfo();
+// 	}
+
+
+
+// 	updateMovie(key){
+// 		let t = document.getElementById('updateTitle');
+// 		let y = document.getElementById('updateYear');
+// 		let d = document.getElementById('updateDirector');
+// 		let a = document.getElementById('updateActors');
+
+// 		let m = this.movies[key];
+// 		let movie = {"id":m.id,"Title":t.value,"Year":y.value,"Director":d.value,"Poster":m.Poster,"Actors":a.value};
+
+// 		this.movies[key] = movie;
+// 		let details = document.getElementById('movieDetails');
+// 		details.innerHTML = "";
+		
+// 		this.movieListInfo();
+// 		this.showMovieList();
+// 	}
 /*
-"use strict";
-
-class App{
-	constructor(){
-		this.recipe = [
-			{
-				"id": 1,
-				"name": "Utan",
-				"description": "Utan or Utan Bisaya is a vegetable soup dish popular in the Visayan region, commonly it consists different vegetables like malunggay leaves, okra, squash, taro, vine spinach (alugbati), eggplants, snake beans (sitaw), ginger and tomatoes cooked together with either pork, fish or shrimps. Similar to laswa and the only difference it the vegetable used, are the ones commonly found in the Visayas.",
-				"photo": "img/utan.jpg",
-				"ingredients":[
-					{
-						"qty": "1 large bunch",
-						"name": "spinach"
-					},
-					{
-						"qty": "1/2 small",
-						"name": "butternut squash"
-					},
-					{
-						"qty": "200 g",
-						"name": "sliced okra"
-					},
-					{
-						"qty": "250 g",
-						"name": "fatty minced pork"
-					},
-					{
-						"qty": "6 cups",
-						"name": "chicken stock"
-					},
-					{
-						"qty": "1",
-						"name": "finely chopped onion"
-					},
-					{
-						"qty": "4 cloves",
-						"name": "minced garlic"
-					},
-					{
-						"qty": "1 tbsp",
-						"name": "minced ginger"
-					},
-					{
-						"qty": "1",
-						"name": "fish sauce"
-					},
-					{
-						"qty": "1",
-						"name": "freshly ground black pepper"
-					},
-					{
-						"qty": "1",
-						"name": "oil"
-					}
-				],
-				"preparationtime": "15 minutes",
-				"cookingtime": "20 minutes",
-				"yields": "4-5 servings",
-				"procedure": [
-					"In a pot add oil then sauté garlic, ginger and onions.",
-					"Add the pork mince and cook until brown in colour.",
-					"Add the chicken stock then bring to a boil, simmer for 5 minutes.",
-					"Add the squash cook for 3 minutes.",
-					"Add the okra and cook for 3 more minutes.",
-					"Season with fish sauce and freshly ground black pepper add the spinach then simmer for one more minute, turn heat off then cover. Let spinach cook in residual heat for 2 minutes then serve."
-				]
-			},
-			{
-				"id": 2,
-				"name": "Tolang Bisaya",
-				"description": "One of the things and considered as very special food in Iligan City that is also known for fresh seafood capital in the region. Most fish sold in our local market here in Pila came from Laguna Lake, bangus (milkfish), tilapia, dalag (mudfish), hito and kanduli (catfish).",
-				"photo": "img/tolangbisaya.jpg",
-				"ingredients":[
-					{
-						"qty": "1/2 kilo",
-						"name": "Pampano or any white-meat fish"
-					},
-					{
-						"qty": "1",
-						"name": "quartered bell pepper"
-					},
-					{
-						"qty": "1 stalk",
-						"name": "Salay (lemongrass)"
-					},
-					{
-						"qty": "3",
-						"name": "quartered tomatoes"
-					},
-					{
-						"qty": "2",
-						"name": "sliced in half onions"
-					},
-					{
-						"qty": "1 bunch",
-						"name": "leeks"
-					},
-					{
-						"qty": "3 cups",
-						"name": "water"
-					}
-				],
-				"preparationtime": "15 minutes",
-				"cookingtime": "20 minutes",
-				"yields": "4-5 servings",
-				"procedure": [
-					"Place all ingredients in a casserole except fish.",
-					"Bring to a boil.",
-					"Add the fish and boil again until the fish is cooked.",
-					"Serve hot."
-				]
-			},
-			{
-				"id": 3,
-				"name": "Pork Humba Bisaya",
-				"description": "Humba (HOOM-BAA) is a Filipino dish similar to adobo, and popular in central part of the Philippines, particularly among the Visayan speaking people. The method of cooking is similar to adobo (chicken or lean pork) by simmering the meat in a marinade of soy sauce, vinegar, brown sugar, bay leaf, and peppercorns. The difference is the type of meat used which is pork belly, which has skin, fat, and lean portions.",
-				"photo": "img/porkhumbabisaya.jpg",
-				"ingredients":[
-					{
-						"qty": "2 lbs.",
-						"name": "cut into 1 and 1/2-inch squares of pork belly"
-					},
-					{
-						"qty": "1 pack",
-						"name": "dried banana blossoms"
-					},
-					{
-						"qty": "1/4 cup",
-						"name": "salted black beans"
-					},
-					{
-						"qty": "1/2 cup",
-						"name": "soy sauce"
-					},
-					{
-						"qty": "1/4 cup",
-						"name": "distilled white vinegar"
-					},
-					{
-						"qty": "1/2 cup",
-						"name": "brown sugar"
-					},
-					{
-						"qty": "6",
-						"name": "minced garlic cloves"
-					},
-					{
-						"qty": "2",
-						"name": "dry bay leaves"
-					},
-					{
-						"qty": "1 teaspoon",
-						"name": "whole peppercorns"
-					},
-					{
-						"qty": "4 cups",
-						"name": "water"
-					}
-				],
-				"preparationtime": "10 minutes",
-				"cookingtime": "1 hours, 30 minutes",
-				"yields": "6-8 servings",
-				"procedure": [
-					"Rinse meat thoroughly under cold running water and pat dry with paper towels.",
-					"In a non-stick skillet over medium heat, arrange pork belly slices in one layer and pan-fry until most of the oil comes out. If you use a smaller pan, you may do this in two batches.",
-					"Once the meat turns brown and most of the fat has rendered, remove from heat and transfer to a cooking pot.",
-					"Add the rest of the ingredients into the pot and bring to a boil. Lower heat to medium low and simmer for an hour until pork has become tender and sauce has thickened.",
-					"Serve with rice."
-				]
-			},
-			{
-				"id": 4,
-				"name": "Manok Adobo Sa Gata",
-				"description": "Masarap ang “native na manok” sa lutuing ito.  Masarap lalo na kapag ‘sinagkotsa ito sa tanglad” bago ito lagyan ng gata at luyang dilaw.",
-				"photo": "img/manokadobosagata.jpg",
-				"ingredients":[
-					{
-						"qty": "1 kilo",
-						"name": "manok adobo cut"
-					},
-					{
-						"qty": "1",
-						"name": "Sibuyas katamtaman ang laki"
-					},
-					{
-						"qty": "3",
-						"name": "butil ng Bawang"
-					},
-					{
-						"qty": "1 piece",
-						"name": "Laurel"
-					},
-					{
-						"qty": "1 piece",
-						"name": "Tanglad"
-					},
-					{
-						"qty": "1",
-						"name": "Luyang dilaw"
-					},
-					{
-						"qty": "1",
-						"name": "Luya"
-					},
-					{
-						"qty": "1",
-						"name": "Sili pangsigang o pamaksiw"
-					},
-					{
-						"qty": "1",
-						"name": "Sili Labuyo"
-					},
-					{
-						"qty": "1",
-						"name": "Sili pokingan o bell pepper"
-					},
-					{
-						"qty": "1",
-						"name": "Paminta durog"
-					},
-					{
-						"qty": "1/2 cup",
-						"name": "Vinegar"
-					},
-					{
-						"qty": "1 tablespoon",
-						"name": "Patis"
-					},
-					{
-						"qty": "1",
-						"name": "Magic Sarap"
-					},
-					{
-						"qty": "1",
-						"name": "Gata"
-					}
-				],
-				"preparationtime": "10 minutes",
-				"cookingtime": "1 hours, 30 minutes",
-				"yields": "6-8 servings",
-				"procedure": [
-					"Igisa ang sibuyas, bawang at luya papulahin kunti",
-					"Ilagay ang manok, patis paminta at laurel, hayaan ng 5 minuto na kumukulo at ilagay na rin ang tanglad at suka.  Takpan.",
-					"Kapag tapos na itong pakuluan ng 5 minuto, ilagay ang pangalawang gata kasabay ang luyang dilaw na hiniwa-hiwa ng maliliit.  Hayaang kumulo ng mga  10 minuto.",
-					"Puwede nang isabay ang papaya na hiniwa ng slanting o ayon sa gusto mong sukat",
-					"Kapag luto na, ilagay na ang panghuling gata, kasabay ng siling pamaksiw at siling labuyo (tantyahin lamang ang gusto mong anghang).",
-					"Timplahin ng asin at magic sarap, ilagay ang bell pepper o siling pokingan.",
-					"Pakuluan ng dahan dahan hanggang sa ito ay lumapot.  Mas masarap kapag lumabas ang sariling mantika ng niyog ng kunti.",
-					"Ihain na mainit kasabay ng mainit din na kanin."
-				]
-			}			
-		];
-		this.state = [
-			{
-				"bind": {
-					"procedures":[],
-					"ingredients_qty":[],
-					"ingredients_name":[]
-				}
-			}
-		];
-	}
-
-	render(html, component){
-
-		component.innerHTML += html;
-	}
-
-	reRender(html, component){
-
-		component.innerHTML = html;
-	}
-
-	createRecipe(){
-		let id = document.getElementById('recipe_id');
-		let name = document.getElementById('recipe_name');
-		let description = document.getElementById('recipe_description');
-		let photo = document.getElementById('recipe_photo');
-		let preparationtime = document.getElementById('recipe_preparationtime');
-		let cookingtime = document.getElementById('recipe_cookingtime');
-		let yields = document.getElementById('recipe_yields');
-		
-		let dummyIngredients = [];
-		for(let i=0;i<this.state[0].bind.ingredients_qty.length;i++){
-			dummyIngredients.push({
-				"qty" : this.state[0].bind.ingredients_qty[i],
-				"name" : this.state[0].bind.ingredients_name[i]
-			});
-		}
-		let ingredients = dummyIngredients;
-
-		let dummyProcedure = [];
-		for(let i=0;i<this.state[0].bind.procedures.length;i++){
-			dummyProcedure.push(this.state[0].bind.procedures[i]);
-		}
-		let procedure = dummyProcedure;
-
-		let recipe = {			
-			"id": id.value,
-			"name": name.value,
-			"description": description.value,
-			"photo": photo.value,
-			"ingredients":ingredients,
-			"preparationtime": preparationtime.value,
-			"cookingtime": cookingtime.value,
-			"yields": yields.value,
-			"procedure": procedure
-		};
-
-
-		this.recipe.push(recipe);
-
-		//Clear Fields
-		this.state[0].bind.procedures = this.state[0].bind.ingredients_qty = this.state[0].bind.ingredients_name = [];
-		id.value = name.value = description.value = photo.value = preparationtime.value = cookingtime.value = yields.value = ''; 
-	}	
-
-	deleteRecipe(key){
-		let r = this.recipe;
-		for(let i=0;i<r.length;i++){
-			if(r[i].id == key){
-				this.recipe.splice(i,1);
-				break;
-			}
-		}		
-		this.recipeLayout();
-	}
-
-	findRecipeByID(id){
-		let r = this.recipe;
-		for(let i=0;i<r.length;i++){
-			if(id==r[i].id){
-				return r[i];
-			}
-		}
-	}	
-
-	findRecipeByName(name){
-		let objects = [];
-		let r = this.recipe;
-		for(let i=0;i<r.length;i++){
-			let expr = (r[i].name.toUpperCase().indexOf(name.toUpperCase()) > -1);
-			// console.log(name," vs ",r[i].name," = ",expr);
-			if(expr){
-				objects.push(r[i]);
-			}
-		}
-		return objects;
-	}
-
-	bindRecipeNewProcedures(val,id){
-		let bind = this.state[0].bind.procedures;
-		bind[id] = val;
-		// console.log(bind);
-	}	
-
-	bindRecipeNewIngredients(val,id,obj){
-		let bind = null;
-		if(obj === "qty"){
-			bind = this.state[0].bind.ingredients_qty;
-		}
-		else if(obj === "name"){
-			bind = this.state[0].bind.ingredients_name;
-		}
-		bind[id] = val;
-		// console.log(bind);
-	}	
-}
-
-class Component extends App{
-	constructor(){
-		
-		super();
-	}
-
 	recipeLayout(){
 		let html = `
 			<div id="recipeLayout" class="container">
@@ -1179,56 +1014,7 @@ class App{
 		component.innerHTML = html;
 	}
 
-	createMovie(){
-		let t = document.getElementById('newTitle');
-		let y = document.getElementById('newYear');
-		let d = document.getElementById('newDirector');
-		let p = document.getElementById('newPoster');
-		let a = document.getElementById('newActors');
-
-		let movie = {"Title":t.value,"Year":y.value,"Director":d.value,"Poster":p.value,"Actors":a.value};
-		this.movies.push(movie);
-
-		t.value = y.value = d.value = p.value = a.value = ''; //Clear Fields
-		this.movieListInfo();
-	}
-
-	deleteMovie(key){		
-		let table = document.getElementById('movieListInfo');
-		table.deleteRow(key);
-		this.movies.splice(key,1);
-
-		// let m = this.movies;
-		// let dummy = [];
-		// for(let i=0;i<m;i++){
-		// 	if(key!=i){
-		// 		dummy.push(m[i]);
-		// 	}
-		// }
-		// this.movies = dummy;
-		let details = document.getElementById('movieDetails');
-		details.innerHTML = "";
-		
-		this.movieListInfo();	
-		this.showMovieList();	
-	}
-
-	updateMovie(key){
-		let t = document.getElementById('updateTitle');
-		let y = document.getElementById('updateYear');
-		let d = document.getElementById('updateDirector');
-		let a = document.getElementById('updateActors');
-
-		let m = this.movies[key];
-		let movie = {"id":m.id,"Title":t.value,"Year":y.value,"Director":d.value,"Poster":m.Poster,"Actors":a.value};
-
-		this.movies[key] = movie;
-		let details = document.getElementById('movieDetails');
-		details.innerHTML = "";
-		
-		this.movieListInfo();
-		this.showMovieList();
-	}
+	
 
 	showLandingPage(){
 		$('#landingpage').show();

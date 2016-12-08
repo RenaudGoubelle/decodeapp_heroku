@@ -44,18 +44,30 @@
   }
 
 */
+  
 
   .Listoftanksimagesize{
-    width: 370px;
+    width: 400px;
     height: 400px;
     
   }
-
+  @media (max-width: 400px){
+    .size{
+    height:auto;
+    width:370px;
+   }
+  }
+  @media (min-width: 370px){
+    .size{
+     width:auto;
+     height:400px;
+   }
+  }
 
 @media (max-width: 300px) {
   .resizeimg {
     height: auto;
-
+    width:370px;
   }
 }
 
@@ -105,7 +117,7 @@
 @media (min-width: 100px) {
   .resizeaction {
     width: auto;
-    height: 50px;
+    height: 60px;
     
   }
 }
