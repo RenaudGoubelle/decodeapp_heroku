@@ -255,10 +255,11 @@ class Component extends App{
 	List_Of_Tanks(){
 		let y = this.tanks;
 		let index =0;
-		let html='<div class="row">';
+		let html='';
 		for(let index=0;index<y.length;index++){
 		 html+=`
-	 		<div class= "col s12 m7">
+		 <div class="row">
+	 		<div class= "col s12 m12">
 	 			<div class="card horizontal #3e2723 brown darken-4  resizecard">
 	 				<div class="card-image #3e2723 brown darken-4">
 	 					<img class="resizeimg" src=${y[index].Tankimage} >
@@ -267,17 +268,17 @@ class Component extends App{
 					<h3 class="red-text"> ${y[index].TankName}</h3>
 	 						<p>${y[index].History}</p>
 	 					</div>
-	 					<div class="card-action #d50000 #3e2723 brown darken-4 white-text resizeaction">
+	 					<div class="card-action #d50000 #3e2723 brown darken-4 white-text ">
 	 						<a href="listoftanks"onclick="component.Update()" id="update" class="white-text">${y[index].link1}</a>
 	 						<a href="listoftanks" onclick="component.Delete()"id="delete" class="white-text">${y[index].link2}</a>
 	 						<a href="listoftanks"onclick="component.More()" id="more" class="white-text">${y[index].link3}</a>
 	 					</div>
 	 				</div>		
 	 			</div>
+	 		</div>
 	 		`;
      }
-     html+='</div>';
-     
+        
 		this.reRender(
 			`${html}`,document.getElementById("app"))
 		$('#landingpage').hide;

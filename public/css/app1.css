@@ -38,15 +38,16 @@
 
 @media (max-width: 300px) {
   .resizeimg {
+    width:auto;
     height: auto;
 
   }
 }
 
-@media (min-width: 100px) {
+@media (min-width: 150px) {
   .resizeimg {
-    width: auto;
-    height: 350px;
+    width:250px;
+    height: 400px;
     
   }
 }
