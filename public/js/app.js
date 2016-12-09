@@ -3,42 +3,8 @@
 
 class App{
 	constructor(){
-	this.x=[
-	{		
-		"Tankimage":"http://armedforcesmuseum.com/wp-content/uploads/2012/04/Tank-M4-Sherman.jpg",
-		"TankName": "M4 Sherman",
-		"History": "The American M4 Sherman Medium Tank formed the backbone of the World War 2 Allied armored offensive.",
-		"link1": "Update",
-		"link2": "Delete",
-		"link3": "More"
-	},
-	{
-		"Tankimage":"http://www.warlordgames.com/wp-content/uploads/2016/11/ST03.jpg",
-		"TankName":"M3 Stuart",
-		"History":"American light tank development in the USA was confounded with tank development itself.",
-		"link1": "Update",
-		"link2": "Delete",
-		"link3": "More"
-	},
-	{	
-		"Tankimage":"http://wotlabs.net/articles/wp-content/uploads/2014/03/kv-2-heavy-tank-05.png" ,
-		"TankName":"KV-2 (The Bunker Buster)" ,
-		"History":"The Russo-Finnish war proved the soundness of the decision to manufacture the KV-1." ,
-		"link1": "Update",
-		"link2": "Delete",
-		"link3": "More"
-
-	},
-	{
-		"Tankimage":"http://www.achtungpanzer.com/images/hunpz4.jpg" ,
-		"TankName":" Panzerkampfwagen IV Ausf F(F1)" ,
-		"History":"Panzerkampfwagen IV was the main German tank of World War II, in action from September 1st of 1939 to May 9th of 1945." ,
-		"link1": "Update",
-		"link2": "Delete",
-		"link3": "More"
-	}
- ]
 	this.tanks=[{
+		"id":1,
 		"Tankimage":"http://www.tanks-encyclopedia.com/wp-content/uploads/2015/05/ISU-152-with-bl8.jpg",
 		"TankName": "ISU-152 (beast killer)",
 		"History": "The ISU-152 was an absolute nightmare for the Wehrmacht. Much like the SU-152, it was capable of blowing Tiger, Ferdinand, and Panther turrets/casemates open",
@@ -46,6 +12,7 @@ class App{
 		"link2": "Delete",
 		"link3": "More"
 	},{
+		"id":2,
 		"Tankimage":"http://www.hobbyboss.com/Uploads/201603/56fcc6049ebc1.jpg",
 		"TankName": "ZIS-30",
 		"History": "The ZiS-30 came to be in 1941, because the Soviets lacked everything but manpower to fight the war.",
@@ -54,6 +21,7 @@ class App{
 		"link3": "More"
 	},
 	{
+		"id":3,
 		"Tankimage":"http://www.militaryfactory.com/armor/imgs/somua-s35_4.jpg",
 		"TankName": "SOMUA S35",
 		"History": "In 1934, the French Army issued a new requirement for a cavalry tank in an attempt to modernized its inventory amidst growing regional unrest.",
@@ -62,6 +30,7 @@ class App{
 		"link3": "More"
 	},
 	{
+		"id":4,
 		"Tankimage":"http://www.army-technology.com/projects/leclerc/images/leclerc_11.jpg",
 		"TankName": "Leclerc Main Battle Tank",
 		"History": " The Leclerc main battle tank was developed by GIAT Industries. Its development began in 1978 and first prototypes were built in 1989. Production of the Leclerc MBT started in 1991.",
@@ -70,6 +39,7 @@ class App{
 		"link3": "More"
 	},
 	{
+		"id":5,
 		"Tankimage":"http://www.tanks-encyclopedia.com/ww2/US/photos/Super_Pershing.jpg",
 		"TankName": "M26 Pershing",
 		"History": "The M26 Pershing descends from a long series of heavy and “universal tank” prototypes, dating back from 1936.",
@@ -78,6 +48,7 @@ class App{
 		"link3": "More"
 	},
 	{
+		"id":6,
 		"Tankimage":"http://www.military-today.com/tanks/m1a2_abrams.jpg",
 		"TankName": "M1A2 Abrams Main Battle Tank",
 		"History": "Approved for production in 1990, the M1A2 represents the U.S. Army’s technological improvement of the basic M1A1 design and the most modern battle tank in the world.",
@@ -86,6 +57,7 @@ class App{
 		"link3": "More"
 	},
 	{
+		"id":7,
 		"Tankimage":"http://www.military-today.com/tanks/t90.jpg",
 		"TankName": "T-90 Main Battle Tank",
 		"History": "The T-90 main battle tank is a further development of the T-72. It was accepted to service with Russian army in 1993 and its low-rate production commenced in 1994.",
@@ -94,6 +66,7 @@ class App{
 		"link3": "More"
 	},
 	{
+		"id":8,
 		"Tankimage":"http://ic.pics.livejournal.com/yuripasholok/765139/2483686/2483686_original.jpg",
 		"TankName": "T-60 (A brother's grave for two) ",
 		"History": "The T-60 was the result of the ongoing development of light tanks that had started well before WWII.",
@@ -102,6 +75,7 @@ class App{
 		"link3": "More"
 	},
 	{
+		"id":9,
 		"Tankimage":"https://upload.wikimedia.org/wikipedia/commons/6/6c/T-70,_technical_museum,_Togliatti-4.jpg",
 		"TankName": "T-70",
 		"History": "The T-70 was yet another stop-gap in Soviet tank production.",
@@ -110,6 +84,7 @@ class App{
 		"link3": "More"
 	},
 	{
+		"id":10,
 		"Tankimage":"http://atvtank.ru/files/pictureBox/catalogItem/335/5.jpg",
 		"TankName": "T-80",
 		"History": "The most remarkable trait about this Soviet MBT was its turbine, used as main motricity power. It was indeed the first conventional MBT equipped with a turbine, preceding the M1 Abrams from two years in service.",
@@ -117,7 +92,8 @@ class App{
 		"link2": "Delete",
 		"link3": "More"
 	},
-	{		
+	{	
+		"id":11,
 		"Tankimage":"http://armedforcesmuseum.com/wp-content/uploads/2012/04/Tank-M4-Sherman.jpg",
 		"TankName": "M4 Sherman",
 		"History": "The American M4 Sherman Medium Tank formed the backbone of the World War 2 Allied armored offensive.",
@@ -126,6 +102,7 @@ class App{
 		"link3": "More"
 	},
 	{
+		"id":12,
 		"Tankimage":"http://www.warlordgames.com/wp-content/uploads/2016/11/ST03.jpg",
 		"TankName":"M3 Stuart",
 		"History":"American light tank development in the USA was confounded with tank development itself.",
@@ -134,6 +111,7 @@ class App{
 		"link3": "More"
 	},
 	{	
+		"id":13,
 		"Tankimage":"http://wotlabs.net/articles/wp-content/uploads/2014/03/kv-2-heavy-tank-05.png" ,
 		"TankName":"KV-2 (The Bunker Buster)" ,
 		"History":"The Russo-Finnish war proved the soundness of the decision to manufacture the KV-1." ,
@@ -143,6 +121,7 @@ class App{
 
 	},
 	{
+		"id":14,
 		"Tankimage":"http://www.achtungpanzer.com/images/hunpz4.jpg" ,
 		"TankName":" Panzerkampfwagen IV Ausf F(F1)" ,
 		"History":"Panzerkampfwagen IV was the main German tank of World War II, in action from September 1st of 1939 to May 9th of 1945." ,
@@ -151,7 +130,6 @@ class App{
 		"link3": "More"
 	}
 	]
-
 	}
 
 	render(html, component){
@@ -163,16 +141,92 @@ class App{
 
 		component.innerHTML = html;
 	}
-	
+	Create_Tank(){
+	let Cid = document.getElementById('Tank_id');
+	let Tankimg= document.getElementById('Tank_photo');
+	let TN = document.getElementById('Tank_Name');
+	let H =document.getElementById('tank_description');
+
+		let Tankcreate = {
+			"id":Cid.value,
+			"Tankimage":Tankimg.value,
+			"TankName":TN.value,
+			"History":H.value};
+		this.tanks.push(Tankcreate);
+		Cid.value='';
+		 Tankimg.value ='';
+		  TN.value ='';
+		   H.value = '';
+		// this.List_Of_Tanks();
+		// $('#List_Of_Tanks').show();
+		// $('#TankCreate').hide();
+
+	// this.reRender(
+	// 	`${html}`, document.getElementById("app"))
 }
+	findTankByID(id){
+		let r = this.tanks;
+		for(let i=0;i<r.length;i++){
+			if(id==r[i].id){
+				return r[i];
+			}
+		}
+	}
+	findTankbyName(TankName){
+	let objects =[];
+	let r= this.tanks;
+	for(let i=0;i<r.length;i++){
+	let expr=(r[i].TankName.toUpperCase().indexOf(TankName.toUpperCase())>-1);
+	if(expr){
+		objects.push(r[i]);
+		}
+	}
+	return objects;
+	}
+}
+	
+
 
 class Component extends App{
 	constructor(){
 
 		super();
 	}
+	TankView(id){
+	let r = this.findTankByID(id);
 
-	tankpediaLayout(){
+let html=`
+	<h5 class="center-align">${r.name}</h5>
+ 			<div class="row">				
+ 				<div class="col s12 m12">
+ 					<div class="card horizontal small">
+ 						<div class="card-image">
+ 							<img src="${r.Tankimage}">
+ 						</div>
+ 						<div class="card-stacked">
+ 							<div class="card-content">
+ 								<p>${r.History}</p>
+ 							</div>
+ 							<div class="card-action small">								
+ 								<span onclick="component.delete(${r.id})" class="btn small red" data-badge-caption="">DELETE</span>
+ 								<span onclick="component.tankpediaLayout()" class="btn small" data-badge-caption="">BACK TO HOME</span>
+ 							</div>
+ 						</div>					
+ 					</div>				
+ 				</div>			
+			</div>
+		`;
+
+
+this.reRender(
+		`${html}`, document.getElementById("app"))
+	$('#TankCreate').hide();
+	$('#landingpage').hide();
+	$('#List_Of_Tanks').hide();
+
+}
+
+tankpediaLayout(){
 		let y = this.tanks;
 		let index=0;
 		let count=0;
@@ -191,9 +245,9 @@ class Component extends App{
 	 						<p>${y[index].History}</p>
 	 					</div>
 	 					<div class="card-action #d50000 #3e2723 brown darken-4 white-text resizeaction">
-	 						<a  class="waves-effect waves-teal btn-flat red-text">${y[index].link1}</a>
-	 						 <a  class="waves-effect waves-teal btn-flat red-text" onclick="component.delete()">${y[index].link2}</a>
-	 						<a  class="waves-effect waves-teal btn-flat red-text">${y[index].link3}</a>
+	 						<a  class="waves-effect waves-teal btn-flat red-text small">${y[index].link1}</a>
+	 						  <a class="waves-effect waves-teal btn-flat red-text small" onclick="component.Delete()">${y[index].link2}</a>
+	 						<a  class="waves-effect waves-teal btn-flat red-text small" onlick="component.TankView()">${y[index].link3}</a>
 	 					</div>
 	 				</div>
 	 			</div>
@@ -218,9 +272,9 @@ class Component extends App{
 	 						<p>${y[index].History}</p>
 	 					</div>
 	 					<div class="card-action #d50000 #3e2723 brown darken-4 white-text resizeaction">
-	 						<a  class="waves-effect waves-teal btn-flat red-text">${y[index].link1}</a>
-	 						<a  class="waves-effect waves-teal btn-flat red-text" onclick="component.delete()">${y[index].link2}</a>
-	 						<a  class="waves-effect waves-teal btn-flat red-text">${y[index].link3}</a>
+	 						<a  class="waves-effect waves-teal btn-flat red-text small">${y[index].link1}</a>
+	 						  <a class="waves-effect waves-teal btn-flat red-text small" onclick="component.Delete()">${y[index].link2}</a>
+	 						<a  class="waves-effect waves-teal btn-flat red-text small" onlick="component.TankView()">${y[index].link3}</a>
 	 					</div>
 	 				</div>
 	 			</div>
@@ -230,10 +284,7 @@ class Component extends App{
 
      html +=`<br>
 	 		<br></div>	`;
-		
-		this.reRender( `
-  ${html}
-  `,document.getElementById("app"));
+		this.reRender( `${html}`,document.getElementById("app"));
         }
 
 // `<div class="col s12 m7">
@@ -251,6 +302,23 @@ class Component extends App{
 //         </div>
 //       </div>
 //     </div>
+
+
+      // <table>
+      //   <thead>
+      //     <tr>
+      //         <th data-field="id">Name</th>
+      //         <th data-field="name">Item Name</th>
+      //         <th data-field="price">Item Price</th>
+      //     </tr>
+      //   </thead>
+
+      //   <tbody>
+      //     <tr>
+      //       <td>Alvin</td>
+      //       <td>Eclair</td>
+      //       <td>$0.87</td>
+      //     </tr>
 //   </div>}`
 
 	List_Of_Tanks(){
@@ -259,27 +327,34 @@ class Component extends App{
 		let html='';
 		for(let index=0;index<y.length;index++){
 		 html+=`
-		 <div class="row">
-	 		<div class= "col s12 m12">
-	 			<div class="card horizontal #3e2723 brown darken-4  resizecard">
-	 				<div class="card-image size #3e2723 brown darken-4">
-	 					<img class="Listoftanksimagesize size" src=${y[index].Tankimage} >
+		 <table>
+		 <tbody>
+		 <tr>
+		 	<td>
+		 	<div class="row">
+		 		<div class= "col s12 m12 ">
+	 			<div class="card horizontal small #3e2723 brown darken-4  resizecard">
+	 				<div class="card-image #3e2723 brown darken-4">
+	 					<img src=${y[index].Tankimage} >
 	 				</div>
+	 				<div class="card-stacked">
 					<div class="card-content #d50000 #3e2723 brown darken-4 white-text">
 					<h3 class="red-text"> ${y[index].TankName}</h3>
 	 						<p>${y[index].History}</p>
 	 					</div>
-	 					<div class="card-action #d50000 #3e2723 brown darken-4 white-text ">
-	 						<a  class="waves-effect waves-teal btn-flat red-text"onlick="">${y[index].link1}</a>
-	 						  <a class="waves-effect waves-teal btn-flat red-text" onclick="component.delete()">${y[index].link2}</a>
-	 						<a  class="waves-effect waves-teal btn-flat red-text"onlick="">${y[index].link3}</a>
+	 				
+	 					<div class="card-action small #d50000 #3e2723 brown darken-4 white-text ">
+	 						<a  class="waves-effect waves-teal btn-flat red-text small"onlick="">${y[index].link1}</a>
+	 						  <a class="waves-effect waves-teal btn-flat red-text small" onclick="component.Delete()">${y[index].link2}</a>
+	 						<a  class="waves-effect waves-teal btn-flat red-text small" onlick="component.TankView()">${y[index].link3}</a>
 	 					</div>
 	 				</div>		
 	 			</div>
 	 		</div>
+	 	</div>
 	 		`;
      }
-        
+
 		this.reRender(
 			`${html}`,document.getElementById("app"))
 		$('#landingpage').hide;
@@ -289,7 +364,7 @@ TankCreate(){
 			<div class="row">
 				<form class="col s12">
 				<h5 class="center-align">Create New Recipe</h5>
-				<button onclick="component.Create_Tank" class="btn waves-effect waves-light red">Deploy</button>
+				<button class="btn waves-effect waves-light red" onclick="component.Create_Tank()">Deploy</button>
 					<div class="row">
 						<div class="input-field col s1 white">
 							<input class="blue-text" disabled value="${this.tanks.length+1}" id="tank_id" type="text" class="validate">
@@ -302,7 +377,7 @@ TankCreate(){
 					<div class="row">
 						<div class="input-field col s6 white">
 							<input id="tank_description" type="text" class="validate">
-							<label for="tank_description">HIstory of tank</label>
+							<label for="tank_description">History of tank</label>
 						</div>
 						<div class="input-field col s6 white">
 							<input id="tank_photo" type="text" class="validate">
@@ -322,65 +397,190 @@ TankCreate(){
 		$('#landingpage').hide();
 		$('#List_Of_Tanks').hide();
 }
-Create_Tank(){
-	let Tankimg= document.getElementById("Tankimage");
-	let TN = document.getElementById("TankName");
-	let H =document.getElementById("History");
-		let Tankcreate = {"Tankimage":Tankimg.value,"TankName":TN.value,"History":H.value};
-		this.tanks.push(Tankcreate);
-		Tankimg.value = TN.value = H.value = '';
-		this.List_Of_Tanks();
-		this.tanks.push(Create_Tank)
-
-	// this.reRender(
-	// 	`${html}`, document.getElementById("app"))
-}
-// 	deleteMovie(key){		
-// 		let table = document.getElementById('movieListInfo');
-// 		table.deleteRow(key);
-// 		this.movies.splice(key,1);
-
-// 		// let m = this.movies;
-// 		// let dummy = [];
-// 		// for(let i=0;i<m;i++){
-// 		// 	if(key!=i){
-// 		// 		dummy.push(m[i]);
-// 		// 	}
-// 		// }
-// 		// this.movies = dummy;
-// 		let details = document.getElementById('movieDetails');
-// 		details.innerHTML = "";
-		
-// 		this.movieListInfo();	
-// 		this.showMovieList();	
-// 	}
 Delete(key){
-	this.tanks.splice(key,1);
-	let del = this.tanks;
-	let dummy=[];
-	for(let i=0; i<tanks.length; i++){
-		if(key!=i){
-				dummy.push(del[i]);
-		}
+	let r = this.tanks;
+	for(let i=0;i<r.length;i++){
+		if(key === r[i].id){
+			this.tanks.splice(i,1);
+			break;
+			}
+		}		
+		this.tankpediaLayout();
 	}
-	this.tanks=dummy;
-	this.List_Of_Tanks();
-	}
-
-
-More(){
-let html=`want more?
-`
-this.reRender(
-		`${html}`, document.getElementById("app"))
-	$('#landing page').hide;
-}
-Update(){
+	Update(){
 	let html=`update tank`;
 	this.reRender(
 		`${html}`, document.getElementById("app"))
 	$('#landing page').hide
 }
+
+//////////////
+// recipeView(id){
+// 		let r = this.findRecipeByID(id);
+
+// 		let html = `
+// 			<h5 class="center-align">${r.name}</h5>
+// 			<div class="row">				
+// 				<div class="col s12 m12">
+// 					<div class="card horizontal small">
+// 						<div class="card-image">
+// 							<img src="${r.photo}">
+// 						</div>
+// 						<div class="card-stacked">
+// 							<div class="card-content">
+// 								<p>${r.description}</p>
+// 							</div>
+// 							<div class="card-action small">								
+// 								<span onclick="component.deleteRecipe(${r.id})" class="new badge small red" data-badge-caption="">DELETE</span>
+// 								<span onclick="component.recipeLayout()" class="new badge small" data-badge-caption="">BACK TO HOME</span>
+// 							</div>
+// 						</div>					
+// 					</div>				
+// 				</div>			
+// 			</div>
+// 		`;
+
+// 		html += `
+// 			<div class="row">
+// 				<table class="striped">
+// 					<thead>
+// 						<tr>
+// 							<th>Preparation Time</th>
+// 							<th>Cooking Time</th>
+// 							<th>Yields</th>
+// 						</tr>
+// 					</thead>
+// 					<tbody>
+// 						<tr>
+// 							<td>${r.preparationtime}</td>
+// 							<td>${r.cookingtime}</td>
+// 							<td>${r.yields}</td>
+// 						</tr>					
+// 					</tbody>
+// 				</table>
+// 			</div>
+// 		`;
+
+// 		html += `
+// 			<div class="row">				
+// 				<div class="col s6 m6">
+// 					<h6>Ingredients</h6>
+// 					<ul class="collection">
+// 		`;
+
+// 		for(let i=0;i<r.ingredients.length;i++){
+// 			let ri = r.ingredients[i];
+// 			html += `
+// 						<li class="collection-item avatar">
+// 							<i class="material-icons circle">star</i>
+// 							<span class="title">${ri.qty}</span>
+// 							<p>${ri.name}<br>
+								
+// 							</p>
+							
+// 						</li>
+// 			`;
+// 		}
+
+// 		html += `				
+// 					</ul>
+// 				</div>
+// 				<div class="col s6 m6">
+// 					<h6>Procedure</h6>
+// 					<ul class="collection">
+// 		`;
+
+// 		for(let i=0;i<r.procedure.length;i++){
+// 			let rp = r.procedure[i];
+// 			html += `
+// 						<li class="collection-item avatar">
+// 							<i class="material-icons circle">done</i>
+// 							<span class="title">Step ${i+1}</span>
+// 							<p>${rp}<br>
+								
+// 							</p>
+							
+// 						</li>
+// 			`;
+// 		}	
+
+// 		html += `
+// 					</ul>
+// 				</div>			
+// 			</div>
+// 		`;
+
+// 		this.reRender(`		
+// 			${html}			
+// 			`,document.getElementById("recipeView"));
+// 		$('#recipeView').show();
+// 		$('#recipeRecent').hide();
+// 		$('#recipeList').hide();
+// 		$('#recipeCreate').hide();
+// 	}
+Create_Tank(){
+	let Cid = document.getElementById('Tank_id');
+	let Tankimg= document.getElementById('Tank_photo');
+	let TN = document.getElementById('Tank_Name');
+	let H =document.getElementById('tank_description');
+
+		let Tankcreate = {
+			"id":Cid.value,
+			"Tankimage":Tankimg.value,
+			"TankName":TN.value,
+			"History":H.value};
+		this.tanks.push(Tankcreate);
+		Cid.value='';
+		 Tankimg.value ='';
+		  TN.value ='';
+		   H.value = '';
+		// this.List_Of_Tanks();
+		// $('#List_Of_Tanks').show();
+		// $('#TankCreate').hide();
+
+	// this.reRender(
+	// 	`${html}`, document.getElementById("app"))
+}
+searchtank(name){
+		let html = ``;
+		let r = this.findTankbyName(name);
+		for(let i=0;i<r.length;i++){
+			html= `
+				<div class="col s12 m4">
+					<div class="card small hoverable">
+						<div class="card-image">
+							<img src="${r[i].Tankimage}">
+							<span class="card-title">${r[i].TankName}</span>
+						</div>
+						<div class="card-content">
+							<p>${r[i].History}</p>
+						</div>
+						<div class="card-action">
+							<a href="#" onclick="component.findTankByID(${r[i].id})">More</a>
+						</div>
+					</div>
+				</div>
+			`;
+		}
+		this.reRender(`
+			${html}
+			`,document.getElementById("recipeListItems"));
+		$('#recipeList').show();
+		$('#recipeView').hide();
+		$('#recipeRecent').hide();	
+		$('#recipeCreate').hide();
+	
+}
+}
+// function visitPage(){
+//         window.location='http://www.google.com';
+//     }
+let component = new Component();
+component.tankpediaLayout();
+
+// 
+
+
 //	deleteRecipe(key){
 // 		let r = this.recipe;
 // 		for(let i=0;i<r.length;i++){
@@ -396,12 +596,7 @@ Update(){
 // 		`${html}`, document.getElementById("app"))
 // 	$('#landing page').hide
 // }
-}
-function visitPage(){
-        window.location='http://www.google.com';
-    }
-let component = new Component();
-component.tankpediaLayout();
+
 
 
 // 		this.state = [
