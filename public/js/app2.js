@@ -143,6 +143,7 @@ class App{
 
 		component.innerHTML = html;
 	}
+	//what supposed to get the values of the inputs and  create a tank
 	createTank(){
 let id = document.getElementById('tank_id');
 let name = document.getElementById('tank_name');
@@ -164,7 +165,7 @@ this.AllTanks.push(AllTanks);
 
 id.value = name.value = description.value = photo.value = ''; 
 } 
-
+//upon a click it deletes tank somehow works
 deletetank(key){
 let r = this.AllTanks;
 for(let i=0;i<r.length;i++){
@@ -176,6 +177,7 @@ if(r[i].id == key){
 this.homepage();
 }
 
+//suposed to get the values of the inputs and push it
 updateTank(id){
 
 id = id+1;
@@ -198,7 +200,7 @@ this.Tanksearch();
 }
 
 
-
+//used for getting the ID of the tanks
 searchTankById(id){
 let r = this.AllTanks;
 for(let i=0;i<r.length;i++){
@@ -207,6 +209,7 @@ if(id==r[i].id){
 }
 }
 }
+//used for getting the name of the tanks
 searchTank(name){
 let objects = [];
 let r = this.AllTanks;
@@ -266,6 +269,7 @@ homepage(){
 	 		<br>
 	 		<br>
      <div class="row">`;
+     //to be able to have a second row while getting the last updates
      let count2= 2;
      	for(let index=(y.length-3);index>=0;index--){
 		if(count2++ === 4)break;
@@ -283,7 +287,7 @@ homepage(){
 	 					<div class="card-action #d50000 #3e2723 brown darken-4 white-text resizeaction">
 							<a  href="#" class="waves-effect waves-teal btn-flat red-text small" onlick="component.Tankupdate(${y[index].id})">${y[index].link1}</a>
 	 						  <a href="#" class="waves-effect waves-teal btn-flat red-text small" onclick="component.deletetank((${y[index].id})">${y[index].link2}</a>
-	 						<a  href="#" class="waves-effect waves-teal btn-flat red-text small" onlick="component.More(${y[index].id})">${y[index].link3}</a>
+	 						<a  href="#" class="waves-effect waves-teal btn-flat red-text small" onlick="component.More(${y[index+1].id})">${y[index].link3}</a>
 	 					</div>
 	 				</div>
 	 			</div>
@@ -295,7 +299,7 @@ homepage(){
      html +=`<br>
 	 		<br></div>	`;
 		this.reRender( `${html}`,document.getElementById("app"));
-        ('#findtank').hide();
+        $('#findtank').hide();
 $('#More').hide();
 $('#homepage').show();
 $('#updateTank').hide();  
@@ -303,7 +307,7 @@ $('#createTank').hide();
 $('#horizontaList').hide();    
 	
         }
-
+//A loop to be able to edit the function faster without going through 14 elements
 horizontaList(){
 	let y = this.AllTanks;
 		let index =0;
@@ -340,10 +344,11 @@ this.reRender(`${html}`,document.getElementById("app"))
 $('#More').hide();
 $('#homepage').hide();
 $('#updateTank').hide();  
-$('#createTank').hide();
+$('#createtank').hide();
 $('#horizontaList').show();    
 
     }
+    //was supposed to work uppon cliking "More" but for some reasons doesn't work unless i go through find
 More(id){
 let r = this.searchTankById(id);
 
@@ -363,7 +368,7 @@ let html=`
 <p>${r.description}</p>
 </div>
 <div class="card-action small">               
-<span onclick="component.horizontaList()" class="new badge small" data-badge-caption="">Back to list</span>
+<a onclick="component.horizontaList()" class="waves-effect red darken-4 waves-light btn">Back to list</a>
 </div>            
 </div>     
 </div>   
@@ -376,24 +381,23 @@ let html=`
 this.reRender(`   
   ${html}     
   `,document.getElementById("app"));
-('#findtank').hide();
+$('#findtank').hide();
 $('#More').show();
 $('#homepage').hide();
 $('#updateTank').hide();  
-$('#createTank').hide();
+$('#createtank').hide();
 $('#horizontaList').hide();    
 
 }
+//Was supposed to show multiple line for inputs and deploy or add a tank to the list
 Tankupdate(id){
-
-id = id - 1;
 
 let html = `
 
 <legend>Tanks</legend>
 <h1>Update tank </h1>
 <span>Update Tank <span class="required"value="${this.AllTanks[id].name}">*</span></span><input type="email"id="tankname" />
-<span>Update Image<span class="required"value="${this.AllTanks[id].image}">*</span></span><input type="email"id="tankphoto"/>
+<span>Update Image<span class="required"value="${this.AllTanks[id].photo}">*</span></span><input type="email"id="tankphoto"/>
 <legend>Description</legend>
 <span>Update Description*</span></span><textarea id="tankdes" class="textarea-field "value="${this.AllTanks[id].description}"></textarea>
 <div class="center-align">
@@ -409,32 +413,27 @@ this.reRender(`
   ${html}
 
   `,document.getElementById("app"));   
-('#findtank').hide();
+$('#findtank').hide();
 $('#More').hide();
 $('#homepage').hide();
 $('#updateTank').show();  
-$('#createTank').hide();
+$('#createtank').hide();
 $('#horizontaList').hide();    
 
 
 }
-
+//together with findtankitem are supposed to show a particular tank but it shows all the tanks for some reasons
 findtank(){
 	let html = `
-
-
-
-
 </di>
 
 <br/>
 <nav>
-<div class="nav-wrapper  blue accent-1">
+<div class="nav-wrapper  blue darken-4">
 <form>
 <div class="input-field ">       
 <input onkeyup="component.findtankItem(this.value)" id="search" type="search" placeholder="Search" required>
 <label for="search "><i class="material-icons ">search</i></label>
-<i class="material-icons">close</i>
 </div>
 </form>
 </div>
@@ -453,9 +452,10 @@ $('#findtank').show();
 $('#More').hide();
 $('#homepage').hide();
 $('#updateTank').hide();  
-$('#createTank').hide();
+$('#createtank').hide();
 $('#horizontaList').hide();   
 }
+//after the input he is charged with only displaying the tank in question he had one job and failed at it
 findtankItem(){
 let html = ``;
 let r = this.searchTank(name);
@@ -484,11 +484,46 @@ $('#findtank').show();
 $('#More').hide();
 $('#homepage').hide();
 $('#updateTank').hide();  
-$('#createTank').hide();
+$('#createtank').hide();
 $('#horizontaList').hide();    
 
 
 }
+createtank(){
+let html = `
+
+<legend>tanks</legend>
+<center><label for="field1"><span>Number of tanks <span class="required white">*</span></span><input   class="white" disabled value="${this.AllTanks.length+1}" id="Tank_id" type="text" ></label></center>
+<center><label for="tank_name"><span>Enter Tank Name <span class="required white">*</span></span><input   class="white" type="email" id="tank_name" /></label></center>
+<center><label for="tank_photo"><span>Enter Image Address<span class="required white">*</span></span><input  class="white" type="email"id="tank_photo"/></label></center>
+</select></label>
+</fieldset>
+<fieldset><legend>Description</legend>
+<center><label for="tank_description"><span>Description*</span></span><textarea id="tank_description" class="textarea-field white"></textarea></label></center>
+
+<div class="center-align">
+<button onclick="component.horizontaList()" class="btn waves-effect waves-light">Back to List</button>
+<button onclick="component.createTank()" class="btn waves-effect waves-light">Save</button>
+</div>
+</div>
+ 
+`;
+
+
+
+this.reRender(`
+  ${html}
+  `,document.getElementById("app"));
+$('#createtank').show();
+$('#findtank').hide();
+$('#More').hide();
+$('#homepage').hide();
+$('#updateTank').hide();  
+$('#createtank').hide();
+$('#horizontaList').hide();   
+
+}
+
 }
 let component = new Component();
 component.homepage();
