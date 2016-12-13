@@ -15,7 +15,7 @@ class App{
 	},
 	{
 		"id":2,
-		"photo":"http://www.hobbyboss.com/Uploads/201603/56fcc6049ebc1.jpg",
+		"photo":"http://www.missing-lynx.com/images/kosmosmolets35sz_1.jpg",
 		"name": "ZIS-30",
 		"description": "The ZiS-30 came to be in 1941, because the Soviets lacked everything but manpower to fight the war.",
 		"link1": "Update",
@@ -315,7 +315,7 @@ horizontaList(){
 		for(let index=0;index<y.length;index++){
 		html+=`
 <div id="Tank_list" class="container" >
-<div class="row center">
+<div class="row">
 <div class="col s12 m12 l12 ">
 
 <div class="card horizontal ">
