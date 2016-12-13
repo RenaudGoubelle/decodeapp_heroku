@@ -36,7 +36,10 @@
   height:400px;
 }
 
-
+.cardsize{
+  height:400px;
+  width:900px;
+}
   /*.resizeimgL {
     width: auto;
     height: auto;

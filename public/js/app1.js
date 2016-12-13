@@ -146,14 +146,14 @@ class App{
 	}
 
 	createTank(){
-		let id = document.getElementById('id');
-		let name = document.getElementById('Name');
-		let description = document.getElementById('description');
-		let photo = document.getElementById('photo');
+		let id = document.getElementById('Tank_id');
+		let name = document.getElementById('Tank_Name');
+		let description = document.getElementById('Tank_description');
+		let photo = document.getElementById('Tank_photo');
 		
 		let tanks = {			
 			"id": id.value,
-			"Name": name.value,
+			"Name": Name.value,
 			"description": description.value,
 			"photo": photo.value,
 		};
@@ -170,8 +170,29 @@ class App{
 				break;
 			}
 		}		
-		this.tankLayout();
+		this.TankList();
 	}
+
+	updatethem(id){
+  	id = id+1;
+  	let baseDummy = {
+    "id" :  id,
+    
+    "name" : $('#Tankname').val(),
+    "description" : $('#tankdes').val(),
+    "image" : $('#Tankphoto').val()
+  }
+
+  let r = this.coc;
+  for(let i=0;i<r.length;i++){
+    if(r[i].id == id){
+      r[i] = baseDummy;
+      break;
+    }
+  }
+
+  this.List_Of_Tanks();
+}
 
 	findTankByID(id){
 		let r = this.tanks;
@@ -194,7 +215,7 @@ class App{
 		}
 		return objects;
 	}
-
+	
 }
 //EXTEND MROE TCODES
 class Component extends App{
@@ -206,23 +227,10 @@ class Component extends App{
 	tankLayout(){
 		let y = this.tanks;
 		let count = 0;	
-		let html =`<nav>
-  <div class="nav-wrapper #212121 grey darken-4 ">
-     <div class="col s12 m12"> 
-      <a href="#Landingpage" class="brand-logo" onclick="component.tankLayout()">Tankpedia</a>
-       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#listoftanks" onclick="component.List_Of_Tanks()">List of Tanks</a></li> 	
-        <li><a href="#createtanks"  onclick="component.TankCreate()">Create Tank</a></ 	li>
-      </ul>
-      </div>
-    </div>
-   </nav>
-   <h3 class="red-text darken-4"> Welcome to Tankpedia !</h3>
-   <br><p class="red-text">In here you can Post and read Information on the tanks of all over the world posted by the community!</p>
-   </font><br>
+		let html =`
    <div class="row">`;
 		for(let index=(y.length-1);index>=0;index--){
-		if(count++ === 2)break;
+		if(count++ ===2)break;
 		
 	 		html+=`
 	 		
@@ -236,8 +244,10 @@ class Component extends App{
 	 						<p>${y[index].description}</p>
 	 					</div>
 	 					<div class="card-action #d50000 #3e2723 brown darken-4 white-text resizeaction">
+	 					<a  href="#" class="waves-effect waves-teal btn-flat red-text small" onlick="component.updateTank()">${y[index].link1}</a>
 	 						  <a href="#" class="waves-effect waves-teal btn-flat red-text small" onclick="component.deleteTank()">${y[index].link2}</a>
 	 						<a  href="#" class="waves-effect waves-teal btn-flat red-text small" onlick="component.TankView()">${y[index].link3}</a>
+
 	 					</div>
 	 				</div>
 	 			</div>
@@ -264,7 +274,7 @@ class Component extends App{
 	 						<p>${y[index].description}</p>
 	 					</div>
 	 					<div class="card-action #d50000 #3e2723 brown darken-4 white-text resizeaction">
-
+							<a  href="#" class="waves-effect waves-teal btn-flat red-text small" onlick="component.updateTank()">${y[index].link1}</a>
 	 						  <a href="#" class="waves-effect waves-teal btn-flat red-text small" onclick="component.deleteTank()">${y[index].link2}</a>
 	 						<a  href="#" class="waves-effect waves-teal btn-flat red-text small" onlick="component.TankView()">${y[index].link3}</a>
 	 					</div>
@@ -290,7 +300,7 @@ class Component extends App{
        <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#listoftanks" onclick="component.List_Of_Tanks()">List of Tanks</a></li>
         <li><a href="#listoftanks" onclick="component.TankList()">Find Tank</a></li>
-        <li><a href="#createtanks"  onclick="component.TankCreate()">Create Tank</a></li>
+        <li><a href="#createtanks"  onclick="component.createTank()">Create Tank</a></li>
       </ul>
       </div>
     </div>
@@ -314,6 +324,7 @@ class Component extends App{
 	 					</div>
 	 				
 	 					<div class="card-action small #d50000 #3e2723 brown darken-4 white-text ">
+	 					<a  href="#" class="waves-effect waves-teal btn-flat red-text small" onlick="component.updateTank()">${y[index].link1}</a>
 	 						  <a href="#" class="waves-effect waves-teal btn-flat red-text small" onclick="component.deleteTank()">${y[index].link2}</a>
 	 						<a  href="#" class="waves-effect waves-teal btn-flat red-text small" onlick="component.TankView()">${y[index].link3}</a>
 	 					</div>
@@ -337,25 +348,27 @@ class Component extends App{
 		let r = this.findTankByID(id);
 
 		let html = `
-			<h5 class="center-align">${r.Name}</h5>
-			<div class="row">				
-				<div class="col s12 m12">
-					<div class="card horizontal small">
-						<div class="card-image">
-							<img src="${r.photo}">
-						</div>
-						<div class="card-stacked">
-							<div class="card-content">
-								<p>${r.description}</p>
-							</div>
-							<div class="card-action small">								
-								<span onclick="component.deleteRecipe(${r.id})" class="new badge small red" data-badge-caption="">DELETE</span>
-								<span onclick="component.recipeLayout()" class="new badge small" data-badge-caption="">BACK TO HOME</span>
-							</div>
-						</div>					
-					</div>				
-				</div>			
-			</div>
+		<div class="row">       
+      <div class="col s12 m12">
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="${r.photo}">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <h5 class="center-align">${r.name}</h5>
+              <p>${r.description}</p>
+            </div>
+            <div class="card-action small">               
+                <button onclick="component.List_Of_Tanks(${r.id})" class="btn waves-effect waves-light grey">Back to list</button>
+				<button onclick="component.updateTank(${r.id})" class="btn waves-effect waves-light grey">Update</button>
+         		<button onclick="component.updateTank(${r.id})" class="btn waves-effect waves-light grey">Update</button>
+            </div>            
+          </div>     
+        </div>   
+
+      </div>      
+    </div>
 		`;
 		this.reRender(`		
 			${html}			
@@ -368,20 +381,23 @@ class Component extends App{
 
 	TankList(){
 		let html = `
-			<br/>
-		  	<nav>
-	    		<div class="nav-wrapper white">
-					<form>
-						<div class="input-field">				
-							<input onkeyup="component.FTankListV(this.value)" id="search" type="search" placeholder="Search" required>
-							<label for="search"><i class="material-icons">search</i></label>
-							<i class="material-icons">close</i>
-						</div>
-					</form>
-				</div>
-			</nav>
-			<br/>
-		`;
+    </di>
+
+    <br/>
+    <nav>
+    <div class="nav-wrapper  Black lighten-1">
+    <form>
+    <div class="input-field">       
+    <input onkeyup="component.cocItems(this.value)" id="search" type="search" placeholder="Search" required>
+    <label for="search "><i class="material-icons ">search</i></label>
+    <i class="material-icons">close</i>
+    </div>
+    </form>
+    </div>
+    </nav>
+    <br/>
+
+    `;
 
 		html += `
 			<div class="row" id="TankListV">
@@ -405,7 +421,11 @@ class Component extends App{
 				</div>
 			`;
 		}
-		html += `</div>`;
+		html += `</div> <div align="center">
+		<button onclick="component.landingPage()" class="btn waves-effect waves-light">Back</button>
+
+
+    <button onclick="component.createBase()" class="btn waves-effect waves-light">Create Tank </button>`;
 
 		this.reRender(`${html}`,document.getElementById("TankList"));
 		$('#TankList').show();
@@ -446,39 +466,79 @@ class Component extends App{
 	}
 
 
-	TankCreate(){let html = `
-			<div class="row">
-				<form class="col s12">
-				<h5 class="center-align">Do you wish to add a tank?</h5>
-				<button onclick="component.createTank()" class="btn waves-effect waves-light">Deploy</button>
-					<div class="row">
-						<div class="input-field col s6">
-							<input disabled value="${this.tanks.length+1}" id="recipe_id" type="text" class="validate">
-						</div>
-						<div class="input-field col s6">
-							<input id="recipe_name" type="text" class="validate">
-							<label for="recipe_name">NAME</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s6">
-							<input id="recipe_description" type="text" class="validate">
-							<label for="recipe_description">DESCRIPTION</label>
-						</div>
-						<div class="input-field col s6">
-							<input id="recipe_photo" type="text" class="validate">
-							<label for="recipe_photo">PHOTO</label>
-						</div>
-					</div>
+	CreateTank(){
+		let html = `
+			
+    <div class="form-style-3">
+
+    <fieldset><legend>Tanks</legend>
+    <center><label for="field1"><span>Number of Tanks <span class="required">*</span></span><input disabled value="${this.coc.length+1}" id="Tank_id" type="text" ></label></center>
+    <center><label for="coc_name"><span>Enter Tank's Name <span class="required">*</span></span><input type="email" id="Tank_Name" /></label></center>
+    <center><label for="coc_image"><span>Enter Image Address<span class="required">*</span></span><input type="email"id="Tank_photo"/></label></center>
+    </select></label>
+    </fieldset>
+    <fieldset><legend>Description</legend>
+    <center><label for="Tank_description"><span>Description*</span></span><textarea id="Tank_description" class="textarea-field "></textarea></label></center>
+    
+    <div class="center-align">
+    <button onclick="component.cocList()" class="btn waves-effect waves-light green">Back to List</button>
+
+
+    
+    
+    <button onclick="component.createTank()" class="btn waves-effect waves-light green">Save</button>
+    </div>
+    </fieldset>
+
+    </div>
+    
 	`;
 	this.reRender(`
 			${html}
-			`,document.getElementById("TankCreate"));
-	$('#TankCreate').show();
+			`,document.getElementById("createTank"));
+	$('#CreateTank').show();
 		$('#TankList').hide();
 		$('#TankView').hide();
 		$('#tankLayout').hide();
 		$('#List_Of_Tanks').hide();	}
+
+	updateTank(id){
+   	 id = id - 1;
+   	 let html = `
+   	 <div class="form-style-3">
+  	 <div class="row">
+    	<fieldset><legend>Tanks</legend>
+   	 <center><h1>Update Tank </h1></center>
+  	  <center><span>Update Tank <span class="required"value="${this.tanks[id].name}">*</span></span><input type="email"id="Tankname</label></center>
+ 	   <center><span>Update Image<span class="required"value="${this.tanks[id].image}">*</span></span><input type="email"id="Tankphoto"/></label></center>
+  	  </select></label>
+  	  </fieldset>
+   	 <fieldset><legend>Description</legend>
+    	<center><span>Update Description*</span></span><textarea id="tankdes" class="textarea-field "value="${this.tanks[id].description}"></textarea></label></center>
+
+
+    <div class="center-align">
+    <button onclick="component.List_Of_Tanks(${r.id})" class="btn waves-effect waves-light grey">Back to list</button>
+	<button onclick="component.updatethem(${r.id})" class="btn waves-effect waves-light grey">Update</button>
+    </div>
+    </div>
+    `;  
+    this.reRender(`
+
+      ${html}
+
+      `,document.getElementById("updateBase"));   
+
+    $('#List_Of_ Tanks').hide();
+    $('#TankView').hide();
+    $('#updateTank').show();
+    $('#tankLayout').hide();
+    $('#createTank').hide();    
+    
+    
+    
+  }
+
 }
 let component = new Component();
 component.tankLayout();
